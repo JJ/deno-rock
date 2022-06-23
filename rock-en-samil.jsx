@@ -29,7 +29,7 @@ function App(url) {
 
 function handler(req) {
     const thisUrl = new URL(req.url);
-    const html = renderSSR(<App />,  thisUrl.pathname);
+    const html = renderSSR(<App />,  thisUrl.href);
     return new Response(html, {
         headers: {
             "content-type": "text/html",
