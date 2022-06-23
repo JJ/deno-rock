@@ -32,7 +32,7 @@ function handler(req) {
     const html = renderSSR(<App />,  thisUrl.href);
     return new Response(html, {
         headers: {
-            "content-type": "text/html",
+            "content-type": "text/html; charset=utf-8",
         },
     });
 }
