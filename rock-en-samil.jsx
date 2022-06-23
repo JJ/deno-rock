@@ -12,7 +12,7 @@ function App(url) {
     if ( url == "silbo" ) {
         pachanga='Pachanga'
     } else {
-        pachanga='Me lo repita'
+        pachanga=url+' Me lo repita'
     }
     return (
         <html>
