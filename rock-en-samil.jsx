@@ -9,6 +9,7 @@ import { h, renderSSR } from "https://deno.land/x/nano_jsx@v0.0.32/mod.ts";
 
 function App(url) {
     let pachanga;
+    console.log(url);
     if ( url == "silbo" ) {
         pachanga='Pachanga'
     } else {
@@ -27,7 +28,8 @@ function App(url) {
 }
 
 function handler(req) {
-    const html = renderSSR(<App />, req.url );
+    const thisUrl = new URL(req.url);
+    const html = renderSSR(<App />,  thisURL.pathname);
     return new Response(html, {
         headers: {
             "content-type": "text/html",
